@@ -116,7 +116,12 @@ class MyFirstGrid extends PureComponent{
         tempObj[dic[index].toString()]=posts
       })
       this.setState({data: tempObj});
-    })    
+    })
+    .catch(error=>{
+      console.log("Error: "+error);
+      // Handle failed fetch
+      alert("Backend isn't responding...Please check.");
+    })
   }
 
   drag(ev) {
